@@ -6,12 +6,12 @@ class formPessoa(forms.ModelForm):
   class Meta:
       model = Pessoa
       
-class cadastroPessoa(models.Model):
-  nome = models.CharField(max_length=100, required=True)
-  email = models.EmailField()
-  usuario = models.CharField(max_length=15, required=True)
-  senha = models.CharField(wudget=forms.PasswordInput, required=True)
+class cadastroPessoa(forms.Form):
+  nome = forms.CharField(max_length=100, required=True)
+  email = forms.EmailField()
+  usuario = forms.CharField(max_length=15, required=True)
+  senha = forms.CharField(widget=forms.PasswordInput, required=True)
   
-class frm_Login(models.Model):
-  usuario = models.CharField(max_length =15, required=True)
-  senha = models.CharField(max_length =12, required=True)
+#class frm_Login(forms.Form):
+  #usuario = forms.CharField(max_length =15, required=True)
+  #senha = forms.CharField(widget=forms.PasswordInput, required=True)

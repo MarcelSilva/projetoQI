@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Página Principal</title>
-</head>
-<body>
-  <h1 text-align="center" font-size="20px"> Bem vindo!!! </h1>
-	<form action="/validar/" method="POST">
-		<div class="Usuario">
-        <label for="idUsuario" class="nome">Usuário</label>
-        <input name="usuario" id="idUsuario" value="{{ pessoa.usuario }}" type="text" class="usuario"  placeholder="Usuario">
-    </div>
-    <div class="Senha">
-        <label for="idSenha" class="nome">Senha</label>
-        <input name="senha" id="idSenha" value="{{ pessoa.senha }}" type="text" class="senha"  placeholder="Senha">
-    </div>
-    <button type="submit" class="btn btn-success">Entrar</button>
-		<a href="/cadastrar/">Se você não possuir um cadastro, clique aqui!!!</a>
-	</form>
-</body>
-</html>
+
+<h1>INDEX</h1>
+
+<br />
+Conteúdo normal do site...
+<br />
+
+{% if user.is_authenticated %}
+    <br />
+    <a href="/dashboard/">Painel do Cliente</a>
+    <br />
+    <a href="/logoff/">Clique para Sair</a>
+    <br />
+{% else %}
+<a href="/cadastro/">Clique para fazer o cadastro</a>
+{% endif %}
+
+

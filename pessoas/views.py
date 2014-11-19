@@ -1,11 +1,11 @@
-from django.shortcuts import render
-from pessoas.forms import formPessoa
+from django.shortcuts import render, HttpResponseRedirect
+from pessoas.forms import cadastroPessoa, formPessoa
 
 def index (request):
     form = formPessoa()
     return render(request,'index.html' ,{'form':form})
 
-def cadastrar(request):
+def cadastro(request):
     form = cadastroPessoa()
     return render(request, 'form_cadastroUsuario.html',{'form': form})
   
@@ -18,8 +18,5 @@ def validar (request):
 			pessoa.save()
 
 			pessoas = Pessoa.objects.all()
-			return render(request,'forma_cadastroUsuario.html' ,{'form':form, 'pessoas':pessoas})
+			return render(request,'form_cadastroUsuario.html' ,{'form':form, 'pessoas':pessoas})
 
-def tela_login():
-	frm_login = frmLogin()
-	return render(request,'form_login.html',{'frm_login':frm_login})
