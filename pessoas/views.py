@@ -5,9 +5,10 @@ def index (request):
     form = formPessoa()
     return render(request,'index.html' ,{'form':form})
 
-def adicionar(request):
-    return render(request, 'templates/form_cadastroUsuario.html')
-
+def cadastrar(request):
+    form = cadastroPessoa()
+    return render(request, 'form_cadastroUsuario.html',{'form': form})
+  
 def validar (request):
 	if request.method == 'POST':
 		form = formPessoa(request.POST)
