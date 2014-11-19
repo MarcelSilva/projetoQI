@@ -5,6 +5,6 @@ class formPessoa(forms.ModelForm):
   class Meta:
       model = Pessoa
      
-
-   
-    
+class formLogin(forms.Form):
+	usuario_nome = forms.CharField(max_length = '15', required = True)
+	usuario_nome = forms.CharField(max_length = '15', required = True)
