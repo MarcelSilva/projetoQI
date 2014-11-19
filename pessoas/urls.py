@@ -1,9 +1,7 @@
 from django.conf.urls import patterns, include, url
 
-from django.contrib import admin
-admin.autodiscover()
-
-urlpatterns = patterns('',
+urlpatterns = patterns('pessoas.views',
     url(r'^$','pessoas.views.index'),
     url(r'^validar/$', 'pessoas.views.validar'),
+    url(r'^adicionar/$', 'pessoas.views.adicionar'),
 )

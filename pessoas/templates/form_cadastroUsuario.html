@@ -1,0 +1,31 @@
+<html>
+  <head>
+    Cadastrar Usuário
+  </head>
+<form class="form-horizontal" action="/templates/adicionar/" method="POST" role="form">{% csrf_token %}
+
+    <input type="hidden" id="codigo" name="codigo" value="{{ pessoa.pk|default_if_none:'0' }}">
+
+    <div class="Nome">
+        <label for="idNome" class="nome">Nome</label>
+        <input name="nome" id="idNome" value="{{ pessoa.nome }}" type="text" class="nome"  placeholder="Nome Completo">
+    </div>
+    <div class="Email">
+        <label for="idEmail" class="email">Email</label>
+        <input name="email" id="idEmail" value="{{ pessoa.email }}" type="text" class="email"  placeholder="admin@admin.com">
+    </div>
+
+    <div class="Usuario">
+        <label for="idUsuario" class="nome">Usuário</label>
+        <input name="usuario" id="idUsuario" value="{{ pessoa.usuario }}" type="text" class="usuario"  placeholder="Usuario">
+    </div>
+    <div class="Senha">
+        <label for="idSenha" class="nome">Senha</label>
+        <input name="senha" id="idSenha" value="{{ pessoa.senha }}" type="text" class="senha"  placeholder="Senha">
+    </div>
+    <hr>
+    <div align="center">
+        <button type="submit" class="btn btn-success">Salvar Registro</button>
+    </div>
+</form>
+</html>

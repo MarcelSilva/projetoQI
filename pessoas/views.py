@@ -5,6 +5,8 @@ def index (request):
     form = formPessoa()
     return render(request,'index.html' ,{'form':form})
 
+def adicionar(request):
+    return render(request, 'templates/form_cadastroUsuario.html')
 
 def validar (request):
 	if request.method == 'POST':
@@ -15,7 +17,7 @@ def validar (request):
 			pessoa.save()
 
 			pessoas = Pessoa.objects.all()
-			return render(request,'validar.html' ,{'form':form, 'pessoas':pessoas})
+			return render(request,'forma_cadastroUsuario.html' ,{'form':form, 'pessoas':pessoas})
 
 def tela_login():
 	frm_login = frmLogin()
